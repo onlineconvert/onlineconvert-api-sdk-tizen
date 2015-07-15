@@ -20,19 +20,19 @@ public:
 
   
   IList* 
-  jobsJobIdInputGetWithCompletion(String* token, String* key, String* jobId, void (* handler)(IList*, SamiError*));
+  jobsJobIdInputGetWithCompletion(String* xOcToken, String* xOcApiKey, String* jobId, void (* handler)(IList*, SamiError*));
   
   SamiInputFile* 
-  jobsJobIdInputPostWithCompletion(SamiInputFile* body, String* token, String* key, String* jobId, void (* handler)(SamiInputFile*, SamiError*));
+  jobsJobIdInputPostWithCompletion(SamiInputFile* body, String* xOcToken, String* xOcApiKey, String* jobId, void (* handler)(SamiInputFile*, SamiError*));
   
   SamiInputFile* 
-  jobsJobIdInputFileIdGetWithCompletion(String* token, String* key, String* jobId, String* fileId, void (* handler)(SamiInputFile*, SamiError*));
+  jobsJobIdInputFileIdGetWithCompletion(String* xOcToken, String* xOcApiKey, String* jobId, String* fileId, void (* handler)(SamiInputFile*, SamiError*));
   
   SamiInputFile* 
-  jobsJobIdInputFileIdDeleteWithCompletion(String* token, String* key, String* jobId, String* fileId, void (* handler)(SamiInputFile*, SamiError*));
+  jobsJobIdInputFileIdDeleteWithCompletion(String* xOcToken, String* xOcApiKey, String* jobId, String* fileId, void (* handler)(SamiInputFile*, SamiError*));
   
   static String getBasePath() {
-    return L"http://api2.online-convert.com";
+    return L"http://api2.online-convert.com/";
   }
 
 private:

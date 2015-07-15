@@ -20,16 +20,16 @@ public:
 
   
   IList* 
-  jobsJobIdOutputGetWithCompletion(String* conversionId, String* inputId, String* token, String* key, String* jobId, void (* handler)(IList*, SamiError*));
+  jobsJobIdOutputGetWithCompletion(String* conversionId, String* inputId, String* xOcToken, String* xOcApiKey, String* jobId, void (* handler)(IList*, SamiError*));
   
   IList* 
-  jobsJobIdOutputFileIdGetWithCompletion(String* token, String* key, String* jobId, String* fileId, void (* handler)(IList*, SamiError*));
+  jobsJobIdOutputFileIdGetWithCompletion(String* xOcToken, String* xOcApiKey, String* jobId, String* fileId, void (* handler)(IList*, SamiError*));
   
   IList* 
-  jobsJobIdOutputFileIdDeleteWithCompletion(String* token, String* key, String* jobId, String* fileId, void (* handler)(IList*, SamiError*));
+  jobsJobIdOutputFileIdDeleteWithCompletion(String* xOcToken, String* xOcApiKey, String* jobId, String* fileId, void (* handler)(IList*, SamiError*));
   
   static String getBasePath() {
-    return L"http://api2.online-convert.com";
+    return L"http://api2.online-convert.com/";
   }
 
 private:

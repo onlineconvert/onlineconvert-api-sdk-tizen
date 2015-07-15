@@ -27,7 +27,6 @@ SamiJob::init() {
     pType = null;
     pStatus = null;
     pProcess = null;
-    pTest = null;
     pConversion = null;
     pInput = null;
     pCallback = null;
@@ -63,11 +62,6 @@ SamiJob::cleanup() {
         
         delete pProcess;
         pProcess = null;
-    }
-    if(pTest != null) {
-        
-        delete pTest;
-        pTest = null;
     }
     if(pConversion != null) {
         pConversion->RemoveAll(true);
@@ -182,15 +176,6 @@ SamiJob::fromJsonObject(IJsonValue* pJson) {
             jsonToValue(pProcess, pProcessVal, L"Boolean", L"Boolean");
         }
         delete pProcessKey;
-        JsonString* pTestKey = new JsonString(L"test");
-        IJsonValue* pTestVal = null;
-        pJsonObject->GetValue(pTestKey, pTestVal);
-        if(pTestVal != null) {
-            
-            pTest = new Boolean(false);
-            jsonToValue(pTest, pTestVal, L"Boolean", L"Boolean");
-        }
-        delete pTestKey;
         JsonString* pConversionKey = new JsonString(L"conversion");
         IJsonValue* pConversionVal = null;
         pJsonObject->GetValue(pConversionKey, pConversionVal);
@@ -317,10 +302,6 @@ SamiJob::asJsonObject() {
     pJsonObject->Add(pProcessKey, toJson(getPProcess(), "Boolean", ""));
 
     
-    JsonString *pTestKey = new JsonString(L"test");
-    pJsonObject->Add(pTestKey, toJson(getPTest(), "Boolean", ""));
-
-    
     JsonString *pConversionKey = new JsonString(L"conversion");
     pJsonObject->Add(pConversionKey, toJson(getPConversion(), "SamiConversion", "array"));
 
@@ -391,15 +372,6 @@ SamiJob::getPProcess() {
 void
 SamiJob::setPProcess(Boolean* pProcess) {
     this->pProcess = pProcess;
-}
-
-Boolean*
-SamiJob::getPTest() {
-    return pTest;
-}
-void
-SamiJob::setPTest(Boolean* pTest) {
-    this->pTest = pTest;
 }
 
 IList*

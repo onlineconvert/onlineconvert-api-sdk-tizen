@@ -62,9 +62,6 @@ public:
     Boolean* getPProcess();
     void setPProcess(Boolean* pProcess);
     
-    Boolean* getPTest();
-    void setPTest(Boolean* pTest);
-    
     IList* getPConversion();
     void setPConversion(IList* pConversion);
     
@@ -90,7 +87,6 @@ private:
     String* pType;
     SamiStatus* pStatus;
     Boolean* pProcess;
-    Boolean* pTest;
     IList* pConversion;
     IList* pInput;
     String* pCallback;

@@ -52,7 +52,7 @@ jobsJobIdInputGetProcessor(HttpResponse* pHttpResponse, void (* handler)(void*, 
 }
 
 IList* 
-SamiInputApi::jobsJobIdInputGetWithCompletion(String* token, String* key, String* jobId, void (* success)(IList*, SamiError*)) {
+SamiInputApi::jobsJobIdInputGetWithCompletion(String* xOcToken, String* xOcApiKey, String* jobId, void (* success)(IList*, SamiError*)) {
   client = new SamiApiClient();
 
   client->success(&jobsJobIdInputGetProcessor, (void(*)(void*, SamiError*))success);
@@ -60,10 +60,10 @@ SamiInputApi::jobsJobIdInputGetWithCompletion(String* token, String* key, String
   headerParams->Construct();
 
   
-    headerParams->Add(new String("token"), token);
+    headerParams->Add(new String("X-Oc-Token"), xOcToken);
   
   
-    headerParams->Add(new String("key"), key);
+    headerParams->Add(new String("X-Oc-Api-Key"), xOcApiKey);
   
   
 
@@ -125,7 +125,7 @@ jobsJobIdInputPostProcessor(HttpResponse* pHttpResponse, void (* handler)(void*,
 }
 
 SamiInputFile* 
-SamiInputApi::jobsJobIdInputPostWithCompletion(SamiInputFile* body, String* token, String* key, String* jobId, void (* success)(SamiInputFile*, SamiError*)) {
+SamiInputApi::jobsJobIdInputPostWithCompletion(SamiInputFile* body, String* xOcToken, String* xOcApiKey, String* jobId, void (* success)(SamiInputFile*, SamiError*)) {
   client = new SamiApiClient();
 
   client->success(&jobsJobIdInputPostProcessor, (void(*)(void*, SamiError*))success);
@@ -133,10 +133,10 @@ SamiInputApi::jobsJobIdInputPostWithCompletion(SamiInputFile* body, String* toke
   headerParams->Construct();
 
   
-    headerParams->Add(new String("token"), token);
+    headerParams->Add(new String("X-Oc-Token"), xOcToken);
   
   
-    headerParams->Add(new String("key"), key);
+    headerParams->Add(new String("X-Oc-Api-Key"), xOcApiKey);
   
   
 
@@ -206,7 +206,7 @@ jobsJobIdInputFileIdGetProcessor(HttpResponse* pHttpResponse, void (* handler)(v
 }
 
 SamiInputFile* 
-SamiInputApi::jobsJobIdInputFileIdGetWithCompletion(String* token, String* key, String* jobId, String* fileId, void (* success)(SamiInputFile*, SamiError*)) {
+SamiInputApi::jobsJobIdInputFileIdGetWithCompletion(String* xOcToken, String* xOcApiKey, String* jobId, String* fileId, void (* success)(SamiInputFile*, SamiError*)) {
   client = new SamiApiClient();
 
   client->success(&jobsJobIdInputFileIdGetProcessor, (void(*)(void*, SamiError*))success);
@@ -214,10 +214,10 @@ SamiInputApi::jobsJobIdInputFileIdGetWithCompletion(String* token, String* key, 
   headerParams->Construct();
 
   
-    headerParams->Add(new String("token"), token);
+    headerParams->Add(new String("X-Oc-Token"), xOcToken);
   
   
-    headerParams->Add(new String("key"), key);
+    headerParams->Add(new String("X-Oc-Api-Key"), xOcApiKey);
   
   
 
@@ -284,7 +284,7 @@ jobsJobIdInputFileIdDeleteProcessor(HttpResponse* pHttpResponse, void (* handler
 }
 
 SamiInputFile* 
-SamiInputApi::jobsJobIdInputFileIdDeleteWithCompletion(String* token, String* key, String* jobId, String* fileId, void (* success)(SamiInputFile*, SamiError*)) {
+SamiInputApi::jobsJobIdInputFileIdDeleteWithCompletion(String* xOcToken, String* xOcApiKey, String* jobId, String* fileId, void (* success)(SamiInputFile*, SamiError*)) {
   client = new SamiApiClient();
 
   client->success(&jobsJobIdInputFileIdDeleteProcessor, (void(*)(void*, SamiError*))success);
@@ -292,10 +292,10 @@ SamiInputApi::jobsJobIdInputFileIdDeleteWithCompletion(String* token, String* ke
   headerParams->Construct();
 
   
-    headerParams->Add(new String("token"), token);
+    headerParams->Add(new String("X-Oc-Token"), xOcToken);
   
   
-    headerParams->Add(new String("key"), key);
+    headerParams->Add(new String("X-Oc-Api-Key"), xOcApiKey);
   
   
 

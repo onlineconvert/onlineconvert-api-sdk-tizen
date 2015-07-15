@@ -27,7 +27,7 @@ public:
   statusesGetWithCompletion( void (* handler)(IList*, SamiError*));
   
   static String getBasePath() {
-    return L"http://api2.online-convert.com";
+    return L"http://api2.online-convert.com/";
   }
 
 private:

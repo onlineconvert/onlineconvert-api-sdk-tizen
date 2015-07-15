@@ -9,7 +9,6 @@
 #include "SamiConversion.h"
 #include "SamiThread.h"
 #include "SamiStatus.h"
-#include "SamiLink.h"
 #include "SamiError.h"
 
 namespace Swagger {
@@ -32,9 +31,6 @@ namespace Swagger {
     }
     if(type.Equals(L"SamiStatus", true)) {
       return new SamiStatus();
-    }
-    if(type.Equals(L"SamiLink", true)) {
-      return new SamiLink();
     }
     if(type.Equals(L"SamiError", true)) {
       return new SamiError();

@@ -52,7 +52,7 @@ jobsGetProcessor(HttpResponse* pHttpResponse, void (* handler)(void*, SamiError*
 }
 
 IList* 
-SamiJobsApi::jobsGetWithCompletion(String* status, String* token, String* key, Long* page, void (* success)(IList*, SamiError*)) {
+SamiJobsApi::jobsGetWithCompletion(String* status, String* xOcToken, String* xOcApiKey, Long* page, void (* success)(IList*, SamiError*)) {
   client = new SamiApiClient();
 
   client->success(&jobsGetProcessor, (void(*)(void*, SamiError*))success);
@@ -60,10 +60,10 @@ SamiJobsApi::jobsGetWithCompletion(String* status, String* token, String* key, L
   headerParams->Construct();
 
   
-    headerParams->Add(new String("token"), token);
+    headerParams->Add(new String("X-Oc-Token"), xOcToken);
   
   
-    headerParams->Add(new String("key"), key);
+    headerParams->Add(new String("X-Oc-Api-Key"), xOcApiKey);
   
   
 
@@ -126,7 +126,7 @@ jobsPostProcessor(HttpResponse* pHttpResponse, void (* handler)(void*, SamiError
 }
 
 SamiJob* 
-SamiJobsApi::jobsPostWithCompletion(String* key, SamiJob* body, void (* success)(SamiJob*, SamiError*)) {
+SamiJobsApi::jobsPostWithCompletion(String* xOcApiKey, SamiJob* body, void (* success)(SamiJob*, SamiError*)) {
   client = new SamiApiClient();
 
   client->success(&jobsPostProcessor, (void(*)(void*, SamiError*))success);
@@ -134,7 +134,7 @@ SamiJobsApi::jobsPostWithCompletion(String* key, SamiJob* body, void (* success)
   headerParams->Construct();
 
   
-    headerParams->Add(new String("key"), key);
+    headerParams->Add(new String("X-Oc-Api-Key"), xOcApiKey);
   
   
 
@@ -199,7 +199,7 @@ jobsJobIdGetProcessor(HttpResponse* pHttpResponse, void (* handler)(void*, SamiE
 }
 
 SamiJob* 
-SamiJobsApi::jobsJobIdGetWithCompletion(String* token, String* key, String* jobId, void (* success)(SamiJob*, SamiError*)) {
+SamiJobsApi::jobsJobIdGetWithCompletion(String* xOcToken, String* xOcApiKey, String* jobId, void (* success)(SamiJob*, SamiError*)) {
   client = new SamiApiClient();
 
   client->success(&jobsJobIdGetProcessor, (void(*)(void*, SamiError*))success);
@@ -207,10 +207,10 @@ SamiJobsApi::jobsJobIdGetWithCompletion(String* token, String* key, String* jobI
   headerParams->Construct();
 
   
-    headerParams->Add(new String("token"), token);
+    headerParams->Add(new String("X-Oc-Token"), xOcToken);
   
   
-    headerParams->Add(new String("key"), key);
+    headerParams->Add(new String("X-Oc-Api-Key"), xOcApiKey);
   
   
 
@@ -272,7 +272,7 @@ jobsJobIdDeleteProcessor(HttpResponse* pHttpResponse, void (* handler)(void*, Sa
 }
 
 SamiJob* 
-SamiJobsApi::jobsJobIdDeleteWithCompletion(String* token, String* key, String* jobId, void (* success)(SamiJob*, SamiError*)) {
+SamiJobsApi::jobsJobIdDeleteWithCompletion(String* xOcToken, String* xOcApiKey, String* jobId, void (* success)(SamiJob*, SamiError*)) {
   client = new SamiApiClient();
 
   client->success(&jobsJobIdDeleteProcessor, (void(*)(void*, SamiError*))success);
@@ -280,10 +280,10 @@ SamiJobsApi::jobsJobIdDeleteWithCompletion(String* token, String* key, String* j
   headerParams->Construct();
 
   
-    headerParams->Add(new String("token"), token);
+    headerParams->Add(new String("X-Oc-Token"), xOcToken);
   
   
-    headerParams->Add(new String("key"), key);
+    headerParams->Add(new String("X-Oc-Api-Key"), xOcApiKey);
   
   
 
@@ -345,7 +345,7 @@ jobsJobIdPatchProcessor(HttpResponse* pHttpResponse, void (* handler)(void*, Sam
 }
 
 SamiJob* 
-SamiJobsApi::jobsJobIdPatchWithCompletion(SamiJob* body, String* token, String* key, String* jobId, void (* success)(SamiJob*, SamiError*)) {
+SamiJobsApi::jobsJobIdPatchWithCompletion(SamiJob* body, String* xOcToken, String* xOcApiKey, String* jobId, void (* success)(SamiJob*, SamiError*)) {
   client = new SamiApiClient();
 
   client->success(&jobsJobIdPatchProcessor, (void(*)(void*, SamiError*))success);
@@ -353,10 +353,10 @@ SamiJobsApi::jobsJobIdPatchWithCompletion(SamiJob* body, String* token, String* 
   headerParams->Construct();
 
   
-    headerParams->Add(new String("token"), token);
+    headerParams->Add(new String("X-Oc-Token"), xOcToken);
   
   
-    headerParams->Add(new String("key"), key);
+    headerParams->Add(new String("X-Oc-Api-Key"), xOcApiKey);
   
   
 
@@ -426,7 +426,7 @@ jobsJobIdThreadsGetProcessor(HttpResponse* pHttpResponse, void (* handler)(void*
 }
 
 IList* 
-SamiJobsApi::jobsJobIdThreadsGetWithCompletion(String* token, String* key, String* jobId, void (* success)(IList*, SamiError*)) {
+SamiJobsApi::jobsJobIdThreadsGetWithCompletion(String* xOcToken, String* xOcApiKey, String* jobId, void (* success)(IList*, SamiError*)) {
   client = new SamiApiClient();
 
   client->success(&jobsJobIdThreadsGetProcessor, (void(*)(void*, SamiError*))success);
@@ -434,10 +434,10 @@ SamiJobsApi::jobsJobIdThreadsGetWithCompletion(String* token, String* key, Strin
   headerParams->Construct();
 
   
-    headerParams->Add(new String("token"), token);
+    headerParams->Add(new String("X-Oc-Token"), xOcToken);
   
   
-    headerParams->Add(new String("key"), key);
+    headerParams->Add(new String("X-Oc-Api-Key"), xOcApiKey);
   
   
 

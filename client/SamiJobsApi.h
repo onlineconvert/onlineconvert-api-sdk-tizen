@@ -22,25 +22,25 @@ public:
 
   
   IList* 
-  jobsGetWithCompletion(String* status, String* token, String* key, Long* page, void (* handler)(IList*, SamiError*));
+  jobsGetWithCompletion(String* status, String* xOcToken, String* xOcApiKey, Long* page, void (* handler)(IList*, SamiError*));
   
   SamiJob* 
-  jobsPostWithCompletion(String* key, SamiJob* body, void (* handler)(SamiJob*, SamiError*));
+  jobsPostWithCompletion(String* xOcApiKey, SamiJob* body, void (* handler)(SamiJob*, SamiError*));
   
   SamiJob* 
-  jobsJobIdGetWithCompletion(String* token, String* key, String* jobId, void (* handler)(SamiJob*, SamiError*));
+  jobsJobIdGetWithCompletion(String* xOcToken, String* xOcApiKey, String* jobId, void (* handler)(SamiJob*, SamiError*));
   
   SamiJob* 
-  jobsJobIdDeleteWithCompletion(String* token, String* key, String* jobId, void (* handler)(SamiJob*, SamiError*));
+  jobsJobIdDeleteWithCompletion(String* xOcToken, String* xOcApiKey, String* jobId, void (* handler)(SamiJob*, SamiError*));
   
   SamiJob* 
-  jobsJobIdPatchWithCompletion(SamiJob* body, String* token, String* key, String* jobId, void (* handler)(SamiJob*, SamiError*));
+  jobsJobIdPatchWithCompletion(SamiJob* body, String* xOcToken, String* xOcApiKey, String* jobId, void (* handler)(SamiJob*, SamiError*));
   
   IList* 
-  jobsJobIdThreadsGetWithCompletion(String* token, String* key, String* jobId, void (* handler)(IList*, SamiError*));
+  jobsJobIdThreadsGetWithCompletion(String* xOcToken, String* xOcApiKey, String* jobId, void (* handler)(IList*, SamiError*));
   
   static String getBasePath() {
-    return L"http://api2.online-convert.com";
+    return L"http://api2.online-convert.com/";
   }
 
 private:
